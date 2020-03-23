@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/common.css">
+    <title>김지영의 포트폴리오 사이트</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,500,600,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="body_cotaienr">
+        <nav class="header">
+           <div class="container">
+                 <a href="index.html">
+                    KIM JIYOUNG
+                </a>  
+           </div>
+        </nav>
+        <div class="full_container">
+            <!--포트폴리오 이미지-->
+            <img src="images/ux01.jpg" alt="">
+            <img src="images/ux02.jpg" alt="">
+            <img src="images/ux03.jpg" alt="">
+             <!--/포트폴리오 이미지-->
+        </div>
+        <footer>
+            <div class="container footer-content">
+                <div class="info">
+                    <div href="#">
+                        <a href="#" class="link">
+                            © Kim JiYoung
+                        </a>
+                    </div>
+                    <div class="copyright">Developed by me with code only a mother could love.</div>
+                    <div class="contact">
+                        <a href="mailto:kimjiyoung@naver.com">
+                            <div class="footer-button">
+                                <img src="images/mail.svg" alt="">
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class="footer-button footer-insta">
+                                <img src="images/linkedin.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="projects">
+                    <div class="footer-project">
+                        <a href="">
+                            My Favorite Albums
+                        </a>
+                    </div>
+                    <div class="footer-project">
+                        <a href="">
+                            My Favorite Albums
+                        </a>
+                    </div>
+                    <div class="footer-project">
+                        <a href="">
+                            My Favorite Albums
+                        </a>
+                    </div>
+                    <div class="footer-project">
+                        <a href="">
+                            My Favorite Albums
+                        </a>
+                    </div>
+                       <div class="footer-project">
+                        <a href="">
+                            My Favorite Albums
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('.header').outerHeight();
+
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 250);
+
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('.header').removeClass('nav-down').addClass('nav-up');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('.header').removeClass('nav-up').addClass('nav-down');
+            }
+        }
+
+        lastScrollTop = st;
+    }
+
+});
+</script>
+</html>
